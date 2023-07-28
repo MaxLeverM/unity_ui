@@ -4,5 +4,7 @@
     {
         public const string LobbyView = "LobbyView";
         public const string PromoView = "PromoView";
+        public const string CategoryView = "CategoryView";
+        public const string ItemView = "ItemView";
     }
 }

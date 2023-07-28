@@ -15,6 +15,11 @@ namespace RedPanda.Project.UI
         {
             UIService = uiService;
             Container = container;
+            OnInjected();
+        }
+
+        protected virtual void OnInjected()
+        {
         }
     }
 }
