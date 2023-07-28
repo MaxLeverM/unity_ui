@@ -1,5 +1,6 @@
 using System;
 using RedPanda.Project.Services.Interfaces;
+using UnityEngine;
 
 namespace RedPanda.Project.Services
 {
@@ -28,9 +29,16 @@ namespace RedPanda.Project.Services
             Currency += delta;
         }
 
-        void IUserService.ReduceCurrency(int delta)
+        bool IUserService.ReduceCurrency(int delta)
         {
+            if (Currency - delta < 0)
+            {
+                Debug.LogError("Not enough money!");
+                return false;
+            }
+
             Currency -= delta;
+            return true;
         }
         
         bool IUserService.HasCurrency(int amount)

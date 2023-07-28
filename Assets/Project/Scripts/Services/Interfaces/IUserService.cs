@@ -6,7 +6,7 @@ namespace RedPanda.Project.Services.Interfaces
     {
         int Currency { get; }
         void AddCurrency(int delta);
-        void ReduceCurrency(int delta);
+        bool ReduceCurrency(int delta);
         bool HasCurrency(int amount);
         event Action<int> OnCurrencyChanged;
     }
