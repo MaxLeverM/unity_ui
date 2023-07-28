@@ -23,7 +23,7 @@ namespace RedPanda.Project.Services.UI
             _viewControl = new UIControl(viewName, _canvas, _container);
         }
 
-        public void Close(string viewName)
+        public void Close()
         {
             _viewControl?.Close();
         }

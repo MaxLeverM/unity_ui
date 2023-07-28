@@ -1,4 +1,5 @@
 using Grace.DependencyInjection;
+using RedPanda.Project.Constants;
 using RedPanda.Project.Services;
 using RedPanda.Project.Services.Interfaces;
 using RedPanda.Project.Services.UI;
@@ -21,7 +22,7 @@ namespace RedPanda.Project
 
             _container.Locate<IUserService>();
             _container.Locate<IPromoService>();
-            _container.Locate<IUIService>().Show("LobbyView");
+            _container.Locate<IUIService>().Show(ViewConst.LobbyView);
         }
     }
 }
