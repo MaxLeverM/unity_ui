@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace RedPanda.Project.UI
+namespace RedPanda.Project.UI.UIElements
 {
     public class FinanceBarView : UIElement
     {

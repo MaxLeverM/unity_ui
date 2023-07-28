@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Grace.DependencyInjection;
-using RedPanda.Project.Configs;
 using RedPanda.Project.Constants;
 using RedPanda.Project.Interfaces;
 using TMPro;
 using UnityEngine;
 
-namespace RedPanda.Project.UI
+namespace RedPanda.Project.UI.UIElements
 {
     public class CategoryView : UIElement
     {

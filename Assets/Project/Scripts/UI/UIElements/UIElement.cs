@@ -1,9 +1,8 @@
 ﻿using Grace.DependencyInjection;
 using Grace.DependencyInjection.Attributes;
-using RedPanda.Project.Services.Interfaces;
 using UnityEngine;
 
-namespace RedPanda.Project.UI
+namespace RedPanda.Project.UI.UIElements
 {
     public abstract class UIElement : MonoBehaviour
     {
