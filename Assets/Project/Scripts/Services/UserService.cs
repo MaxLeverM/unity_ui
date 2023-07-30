@@ -21,7 +21,7 @@ namespace RedPanda.Project.Services
 
         public UserService()
         {
-            Currency = 1000;
+            Currency = 1600;
         }
 
         void IUserService.AddCurrency(int delta)

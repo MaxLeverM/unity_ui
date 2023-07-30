@@ -19,7 +19,7 @@ MonoBehaviour:
     _background: {fileID: 21300000, guid: b26c30ef7d260b34996f74567bc0e09b, type: 3}
   - _rarity: 2
     _background: {fileID: 21300000, guid: 54eacff0100aa6e41bb852cf6af60702, type: 3}
-  itemIcons:
+  _itemIcons:
   - {fileID: 21300000, guid: b85a726f648808949b038ab32fda92f5, type: 3}
   - {fileID: 21300000, guid: 8542fa350ce5cd048acec7e0d005c13c, type: 3}
   - {fileID: 21300000, guid: fe4221b4225a1374ea055db250ddf794, type: 3}

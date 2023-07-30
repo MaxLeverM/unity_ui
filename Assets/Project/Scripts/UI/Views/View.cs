@@ -3,7 +3,7 @@ using Grace.DependencyInjection.Attributes;
 using RedPanda.Project.Services.Interfaces;
 using UnityEngine;
 
-namespace RedPanda.Project.UI
+namespace RedPanda.Project.UI.Views
 {
     public abstract class View : MonoBehaviour
     {

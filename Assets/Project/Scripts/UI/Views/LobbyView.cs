@@ -1,16 +1,15 @@
 using RedPanda.Project.Constants;
-using RedPanda.Project.Services.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RedPanda.Project.UI
+namespace RedPanda.Project.UI.Views
 {
     public sealed class LobbyView : View
     {
-        [SerializeField] private Button startButton;
+        [SerializeField] private Button _startButton;
         private void Awake()
         {
-            startButton.onClick.AddListener(OnStartClicked);
+            _startButton.onClick.AddListener(OnStartClicked);
         }
 
         private void OnStartClicked()

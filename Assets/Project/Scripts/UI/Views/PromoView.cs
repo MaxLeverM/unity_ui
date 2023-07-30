@@ -1,35 +1,38 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Grace.DependencyInjection;
-using RedPanda.Project.Configs;
-using RedPanda.Project.Constants;
+using RedPanda.Project.Data;
 using RedPanda.Project.Services.Interfaces;
+using RedPanda.Project.UI.Factory;
 using RedPanda.Project.UI.UIElements;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
-namespace RedPanda.Project.UI
+namespace RedPanda.Project.UI.Views
 {
     public sealed class PromoView : View
     {
         [SerializeField] private RectTransform _categoryContent;
         [SerializeField] private FinanceBarView _financeBarView;
+        private IPromoService _promoService;
+        private ElementFactory<CategoryView, PromoType> _categoryFactory;
 
         protected override void OnInjected()
         {
             Container.Inject(_financeBarView);
+            _promoService = Container.Locate<IPromoService>();
+            _categoryFactory = new CategoryFactory();
+            Container.Inject(_categoryFactory);
             
-            var promoService = Container.Locate<IPromoService>();
-            var promos = promoService.GetPromos();
+            CreateCategories();
+        }
+
+        private void CreateCategories()
+        {
+            var promos = _promoService.GetPromos();
             var categoryTypes = promos.GroupBy(x => x.Type).Select(x=>x.Key);
             
             foreach (var categoryType in categoryTypes)
             {
-                var models = promos.Where(x => x.Type == categoryType).OrderByDescending(x=>x.Rarity);
-                
-                var view = Object.Instantiate(Resources.Load<CategoryView>($"UI/{ViewConst.CategoryView}"), _categoryContent);
-                Container.Inject(view);
-                view.Setup(categoryType.ToString(), models);
+                _categoryFactory.CreateElement(categoryType, _categoryContent);
             }
         }
     }

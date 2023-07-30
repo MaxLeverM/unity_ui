@@ -11,7 +11,7 @@ namespace RedPanda.Project
     public sealed class Initializer : MonoBehaviour
     {
         [SerializeField] private PromoConfig _promoConfig;
-        private DependencyInjectionContainer _container = new();
+        private readonly DependencyInjectionContainer _container = new();
 
         private void Awake()
         {
@@ -22,11 +22,8 @@ namespace RedPanda.Project
                 block.Export<UIService>().As<IUIService>().Lifestyle.Singleton();
                 block.ExportInstance(_promoConfig).As<IPromoConfig>().Lifestyle.Singleton();
             });
-
-            _container.Locate<IUserService>();
-            _container.Locate<IPromoService>();
+            
             _container.Locate<IUIService>().Show(ViewConst.LobbyView);
-            _container.Locate<IPromoConfig>();
         }
     }
 }

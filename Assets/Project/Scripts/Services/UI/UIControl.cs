@@ -1,5 +1,6 @@
 using Grace.DependencyInjection;
 using RedPanda.Project.UI;
+using RedPanda.Project.UI.Views;
 using UnityEngine;
 
 namespace RedPanda.Project.Services.UI

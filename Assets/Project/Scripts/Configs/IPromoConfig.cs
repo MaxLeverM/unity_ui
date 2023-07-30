@@ -5,7 +5,7 @@ namespace RedPanda.Project.Configs
 {
     public interface IPromoConfig
     {
-        public Sprite GetItemIcon(string iconName);
-        public Sprite GetItemBackground(PromoRarity rarity);
+        Sprite GetItemIcon(string iconName);
+        Sprite GetItemBackground(PromoRarity rarity);
     }
 }

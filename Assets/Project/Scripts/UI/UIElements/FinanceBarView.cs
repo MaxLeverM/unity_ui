@@ -1,4 +1,5 @@
-﻿using RedPanda.Project.Services.Interfaces;
+﻿using RedPanda.Project.Helpers;
+using RedPanda.Project.Services.Interfaces;
 using TMPro;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ namespace RedPanda.Project.UI.UIElements
 
         private void SetRubyAmount(int amount)
         {
-            _rubyText.text = $"<sprite=0>{amount}"; //TODO сделать чтобы для больших чисел добавлялся суффикс
+            _rubyText.text = $"<sprite=0>{UIHelper.CurrencyToString(amount)}";
         }
     }
 }
