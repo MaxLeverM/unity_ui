@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace RedPanda.Project.UI.Factory
 {
-    public abstract class ElementFactory<T,K> where T : UIElement
+    public abstract class ElementFactory<T>
     {
-        public abstract T CreateElement(K data, Transform root);
+        public abstract UIElement CreateElement(T data, Transform root);
     }
 }

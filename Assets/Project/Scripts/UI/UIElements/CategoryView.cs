@@ -13,7 +13,7 @@ namespace RedPanda.Project.UI.UIElements
         [SerializeField] private TMP_Text _headerText;
         [SerializeField] private RectTransform _content;
         private List<IPromoModel> _models;
-        private ElementFactory<ItemView, IPromoModel> _itemFactory;
+        private ElementFactory<IPromoModel> _itemFactory;
 
         protected override void OnInjected()
         {

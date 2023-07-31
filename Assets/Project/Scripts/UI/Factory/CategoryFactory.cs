@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 
 namespace RedPanda.Project.UI.Factory
 {
-    public class CategoryFactory : ElementFactory<CategoryView, PromoType>
+    public class CategoryFactory : ElementFactory<PromoType>
     {
         private IExportLocatorScope _container;
         private IPromoService _promoService;
@@ -22,7 +22,7 @@ namespace RedPanda.Project.UI.Factory
             _promoService = promoService;
         }
 
-        public override CategoryView CreateElement(PromoType type, Transform root)
+        public override UIElement CreateElement(PromoType type, Transform root)
         {
             var promos = _promoService.GetPromos();
             var models = promos.Where(x => x.Type == type).OrderByDescending(x => x.Rarity);

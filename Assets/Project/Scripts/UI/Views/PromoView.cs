@@ -13,7 +13,7 @@ namespace RedPanda.Project.UI.Views
         [SerializeField] private RectTransform _categoryContent;
         [SerializeField] private FinanceBarView _financeBarView;
         private IPromoService _promoService;
-        private ElementFactory<CategoryView, PromoType> _categoryFactory;
+        private ElementFactory<PromoType> _categoryFactory;
 
         protected override void OnInjected()
         {

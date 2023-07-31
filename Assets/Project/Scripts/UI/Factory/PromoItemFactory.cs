@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace RedPanda.Project.UI.Factory
 {
-    public class PromoItemFactory : ElementFactory<ItemView, IPromoModel>
+    public class PromoItemFactory : ElementFactory<IPromoModel>
     {
         private IExportLocatorScope _container;
 
@@ -18,7 +18,7 @@ namespace RedPanda.Project.UI.Factory
             _container = container;
         }
 
-        public override ItemView CreateElement(IPromoModel model, Transform root)
+        public override UIElement CreateElement(IPromoModel model, Transform root)
         {
             var view = Object.Instantiate(Resources.Load<ItemView>($"UI/{ViewConst.ItemView}"), root);
             _container.Inject(view);
