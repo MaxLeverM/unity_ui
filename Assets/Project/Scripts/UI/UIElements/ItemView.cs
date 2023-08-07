@@ -35,7 +35,7 @@ namespace RedPanda.Project.UI.UIElements
             _headerText.text = model.Title;
             _backgroundImage.sprite = _promoConfig.GetItemBackground(model.Rarity);
             _itemImage.sprite = _promoConfig.GetItemIcon(model.GetIcon());
-            _priceText.text = $"x{model.Cost}";
+            _priceText.text = $"<sprite=0>x{model.Cost}";
         }
 
         protected override void OnInjected()
